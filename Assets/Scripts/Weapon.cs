@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
     private void FireWeapon()
     {
         GameObject bullet=Instantiate(bulletPrefab,bulletSpawn.position,Quaternion.identity);
-        bullet.getComponent<Rigidbody>().AddForce(bulletSpawn.forward.normalized * bulletVelocity, ForceMode.Impulse);
+        bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward.normalized * bulletVelocity, ForceMode.Impulse);
         StartCoroutine(DestroyBulletAfterTime(bullet,bulletPrefabLifeTime));
     }
 
